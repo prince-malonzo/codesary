@@ -90,7 +90,7 @@ const Invitation = () => {
         return (
             <div className="invitation-loading">
                 <div className="invitation-spinner"></div>
-                <p className="invitation-loading-text">Preparing your letter...</p>
+                <p className="invitation-loading-text">Preparing your gift...</p>
             </div>
         );
     }
