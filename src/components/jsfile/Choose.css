@@ -1,0 +1,121 @@
+/* Font */
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../assets/fonts/Poppins-Bold.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Med';
+    src: url('../assets/fonts/Poppins-Medium.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Reg';
+    src: url('../assets/fonts/Poppins-Regular.ttf');
+}
+
+/* Container */
+.choose-container {
+    background: linear-gradient(to bottom, #fdddec, #ffffff);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Title */
+.choose-title {
+    font-family: 'Poppins-Med';
+    font-size: 30px;
+    color: #d770aa;
+    background-color: white;
+    padding: 24px 36px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 32px;
+}
+
+/* Gifts container */
+.gift-options {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Each gift box */
+.gift-card {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.gift-card:hover {
+    transform: translateY(5px);
+    border: #ea6cb3 3px solid;
+    box-shadow: 0px 3px 6px #ea6cb3;
+}
+
+/* Labels */
+.gift-label {
+    font-family: 'Poppins-Med';
+    font-size: 30px;
+    color: #ea6cb3;
+    margin-bottom: 4px;
+}
+
+/* Floating animation */
+@keyframes floatUpDown {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Entrance animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Base icon style */
+.gift-icon {
+    width: 200px;
+    height: auto;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards,
+    floatUpDown 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+/* Staggered entrance and float delays */
+.gift-card:nth-child(1) .gift-icon {
+    animation-delay: 0s, 0.8s;
+}
+.gift-card:nth-child(2) .gift-icon {
+    animation-delay: 0.2s, 1s;
+}
+.gift-card:nth-child(3) .gift-icon {
+    animation-delay: 0.4s, 1.2s;
+}
+.gift-card:nth-child(4) .gift-icon {
+    animation-delay: 0.6s, 1.4s;
+}
+
+/* Hover zoom */
+.gift-card:hover .gift-icon {
+    transform: scale(1.05);
+}

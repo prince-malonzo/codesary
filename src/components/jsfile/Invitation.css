@@ -1,0 +1,193 @@
+/* Font */
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../assets/fonts/Poppins-Bold.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Med';
+    src: url('../assets/fonts/Poppins-Medium.ttf');
+}
+
+/* Container */
+.invitation-container {
+    background: linear-gradient(to bottom, #fdddec, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Shared card styles */
+.invitation-card,
+.reaction-card {
+    width: 360px;
+    height: 480px;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Card animation */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-card {
+    animation: fadeInSlide 0.6s ease-out;
+}
+
+/* Titles */
+.invitation-title,
+.reaction-title {
+    font-size: 18px;
+    color: #e88bb7;
+    font-family: 'Poppins-Bold';
+    margin-bottom: 10px;
+}
+
+/* Images */
+.invitation-image,
+.reaction-image {
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Funny animation for ebol1 and ebol2 */
+@keyframes funnyBounce {
+    0%   { transform: translateY(0); }
+    20%  { transform: translateY(-10px) rotate(-5deg); }
+    40%  { transform: translateY(5px) rotate(5deg); }
+    60%  { transform: translateY(-5px) rotate(-3deg); }
+    80%  { transform: translateY(3px) rotate(3deg); }
+    100% { transform: translateY(0); }
+}
+
+.funny-animation {
+    animation: funnyBounce 1.2s ease-in-out;
+    transform-origin: center center;
+}
+
+/* Button group */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Buttons */
+.btn-decline,
+.btn-accept {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins-Med';
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-decline {
+    background-color: transparent;
+    color: #e88bb7;
+    border: 2px solid #e88bb7;
+}
+.btn-decline:hover {
+    background-color: #fde3ef;
+}
+
+.btn-accept {
+    background-color: #e88bb7;
+    color: white;
+    border: none;
+}
+.btn-accept:hover {
+    background-color: #d870a4;
+}
+
+/* Loading screen */
+.invitation-loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #fdddec, #ffffff);
+}
+
+.invitation-loading-text {
+    font-family: 'Poppins-Med';
+    font-size: 16px;
+    color: #e88bb7;
+    margin-top: 20px;
+}
+
+.invitation-spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #e88bb7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Floating NOOO game button */
+.floating-nooo {
+    z-index: 9999;
+    position: fixed;
+    transition: top 0.2s ease, left 0.2s ease;
+    animation: wiggle 0.3s;
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(4deg); }
+    50% { transform: rotate(-4deg); }
+    75% { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Instruction text */
+.instruction-text {
+    margin-top: 12px;
+    font-family: 'Poppins-Bold';
+    color: #e88bb7;
+    font-size: 15px;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Fade in text */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Floating animation for InvCard */
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.float-animation {
+    animation: floatUpDown 3s ease-in-out infinite;
+}

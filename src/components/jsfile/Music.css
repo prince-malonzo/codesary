@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../assets/fonts/Poppins-Bold.ttf');
+  }
+  @font-face {
+    font-family: 'Poppins-Med';
+    src: url('../assets/fonts/Poppins-Medium.ttf');
+  }
+  @font-face {
+    font-family: 'Poppins-Reg';
+    src: url('../assets/fonts/Poppins-Regular.ttf');
+  }
+  
+  .music-container {
+    background: linear-gradient(to bottom, #fdd5ec, #ffffff);
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins-Reg';
+  }
+  
+  .music-back {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .music-back img {
+    width: 24px;
+  }
+  
+  .music-back p {
+    font-family: 'Poppins-Med';
+    color: #d770aa;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .music-card {
+    background: #fff;
+    border: 2px solid #eab8da;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px #eab8da22;
+    padding: 36px 32px 28px 32px;
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .music-card.fade-in {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  
+  .music-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .music-header h1 {
+    font-family: 'Poppins-Bold';
+    color: #f06fb3;
+    margin: 0;
+  }
+  
+  .music-header img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .music-disk {
+    width: 200px;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .music-disk img {
+    width: 100%;
+  }
+  
+  .spinning img {
+    animation: spin 3s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .music-footer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .music-footer h3 {
+    font-family: 'Poppins-Reg';
+    margin: 0;
+    color: #222;
+  }
+  
+  .music-footer button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .music-footer img {
+    width: 30px;
+  }
+  .music-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #fdd5ec, #ffffff);
+    font-family: 'Poppins-Med';
+  }
+  
+  .music-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #fff;
+    border-top: 4px solid #ea6cb3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+  }
+  
+  .music-loading-text {
+    font-size: 16px;
+    color: #d770aa;
+  }
+  

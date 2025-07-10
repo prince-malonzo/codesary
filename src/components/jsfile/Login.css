@@ -1,0 +1,162 @@
+/* Prevent scroll */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../assets/fonts/Poppins-Bold.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Reg';
+    src: url('../assets/fonts/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Med';
+    src: url('../assets/fonts/Poppins-Medium.ttf');
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Background container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: linear-gradient(to bottom, #FDE4F2 50%, #ffffff 100%);
+    animation: fadeIn 1s ease-out;
+}
+  
+/* Main box styling */
+.main-box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+  
+/* Input containers */
+.input-container {
+    width: 100%;
+    margin-bottom: 30px;
+    animation: fadeSlideUp 0.8s ease-out;
+}
+.upper-input,
+.lower-input {
+    margin-bottom: 16px;
+}
+.upper-input label,
+.lower-input label {
+    font-size: 16px;
+    color: #EEA1CD;
+    font-family: 'Poppins-Med';
+    display: flex;
+    margin-bottom: -5px;
+}
+.upper-input input,
+.lower-input input {
+    width: 95%;
+    height: 60px;
+    border: 1px solid #bfbfbf;
+    padding-inline: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins-Reg';
+    transition: border-color 0.3s ease;
+}
+.upper-input input:focus,
+.lower-input input:focus {
+    border-color: #EEA1CD;
+    outline: none;
+}
+  
+/* Button styling */
+.button-container {
+    width: 100%;
+    animation: fadeSlideUp 1s ease-out;
+}
+.button-container button {
+    width: 100%;
+    height: 70px;
+    background-color: #EEA1CD;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    justify-content: center;
+    font-family: 'Poppins-Bold';
+}
+.button-container button:hover {
+    background-color: #e48bb6;
+    transform: scale(1.03);
+}
+
+/* Loading Screen */
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #FDE4F2 50%, #ffffff 100%);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.loading-text {
+    font-family: 'Poppins-Med';
+    font-size: 18px;
+    color: #EEA1CD;
+    margin-top: 20px;
+}
+
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #EEA1CD;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

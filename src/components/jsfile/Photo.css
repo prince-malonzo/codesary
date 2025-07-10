@@ -1,0 +1,230 @@
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../assets/fonts/Poppins-Bold.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Med';
+    src: url('../assets/fonts/Poppins-Medium.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Reg';
+    src: url('../assets/fonts/Poppins-Regular.ttf');
+}
+
+.photo-container {
+    background: linear-gradient(to bottom, #fce4f6, #ffffff);
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins-Reg';
+}
+
+/* Card for carousel: entrance animation */
+.photo-card {
+    background: #fff;
+    border: 2px solid #eab8da;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px #eab8da22;
+    padding: 36px 32px 28px 32px;
+    max-width: 760px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+    animation: fadeInUpCard 0.8s cubic-bezier(.5,1.6,.4,1) 0.15s forwards;
+}
+
+@keyframes fadeInUpCard {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(30px);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(1.03) translateY(-8px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Header row */
+.photo-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    justify-content: center;
+}
+.photo-header h1 {
+    font-family: 'Poppins-Bold';
+    color: #d770aa;
+    margin: 0;
+}
+.photo-header img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Back button */
+.back-button {
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.back-button button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+
+.back-button button:hover {
+    transform: translateX(-4px) scale(1.05);
+}
+
+.back-button img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.back-button h3 {
+    font-family: 'Poppins-Med';
+    font-size: 16px;
+    color: #d770aa;
+}
+
+/* Slider container */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+/* Track that holds items */
+.track {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: visible;
+}
+
+/* Glass Next/Prev Buttons */
+.glass-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    backdrop-filter: blur(8px);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .2s ease, opacity .2s ease;
+    z-index: 10;
+}
+
+.glass-btn:hover {
+    transform: translateY(-50%) scale(1.2);
+    opacity: 0.8;
+}
+
+.glass-btn.prev { left: -30px; z-index: 10; }
+.glass-btn.next { right: -30px; z-index: 10; }
+
+.glass-btn img {
+    width: 24px;
+}
+
+/* Each slide/item */
+.item {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 250px;
+    height: auto;
+    margin-left: -150px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform .5s cubic-bezier(.48,1.42,.6,1.01), filter .5s, opacity .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Only active image floats */
+.item.active img {
+    animation: floatUpDown 3s ease-in-out infinite;
+}
+@keyframes floatUpDown {
+    0%   { transform: translateY(0);}
+    50%  { transform: translateY(-15px);}
+    100% { transform: translateY(0);}
+}
+
+.item img {
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+}
+
+/* Caption moved below slider */
+.carousel-caption {
+    margin-top: 24px;
+    font-family: 'Poppins-Reg';
+    font-size: 22px;
+    color: #3c2a36;
+    letter-spacing: 1px;
+    min-height: 32px;
+    text-align: center;
+    margin-top: -50px;
+}
+
+/* Back loading screen */
+.photo-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.photo-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #fff;
+    border-top: 4px solid #ea6cb3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+.photo-loading-text {
+    font-family: 'Poppins-Med';
+    font-size: 16px;
+    color: #d770aa;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
